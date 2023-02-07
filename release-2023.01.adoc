@@ -1,0 +1,126 @@
+////
+See [1] for attributes available in `issue` objects.
+
+[1] https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-repository-issues
+////
+
+= Release notes for label release/2023-01
+
+== Repository operator-rs:
+    
+Issues included in this release:
+
+* Add product image selection struct https://github.com/stackabletech/operator-rs/issues/470[[470]]
+
+
+== Repository commons-operator:
+    
+Issues included in this release:
+
+
+
+== Repository secret-operator:
+    
+Issues included in this release:
+
+
+
+== Repository listener-operator:
+    
+Issues included in this release:
+
+
+
+== Repository airflow-operator:
+    
+Issues included in this release:
+
+* Implement product image selection https://github.com/stackabletech/airflow-operator/issues/205[[205]]
+
+
+== Repository hive-operator:
+    
+Issues included in this release:
+
+* Consolidate database, s3, hdfs into top-level cluster config https://github.com/stackabletech/hive-operator/issues/291[[291]]
+* Implement product image selection https://github.com/stackabletech/hive-operator/issues/279[[279]]
+
+
+== Repository hdfs-operator:
+    
+Issues included in this release:
+
+* Enable Log Aggregation for HDFS https://github.com/stackabletech/hdfs-operator/issues/288[[288]]
+* [Merged by Bors] - Don't run init container as root and avoid chmod and chowning  https://github.com/stackabletech/hdfs-operator/pull/282[[282]]
+* [Merged by Bors] - Implement product image selection https://github.com/stackabletech/hdfs-operator/pull/281[[281]]
+* Support for multiple storage directories https://github.com/stackabletech/hdfs-operator/issues/274[[274]]
+
+
+== Repository kafka-operator:
+    
+Issues included in this release:
+
+* Rework Kafka  TLS / Auth structs https://github.com/stackabletech/kafka-operator/issues/529[[529]]
+* [Merged by Bors] -  Implement product image selection https://github.com/stackabletech/kafka-operator/pull/482[[482]]
+
+
+== Repository opa-operator:
+    
+Issues included in this release:
+
+* Support offline mode https://github.com/stackabletech/opa-operator/issues/389[[389]]
+* Implement product image selection https://github.com/stackabletech/opa-operator/issues/384[[384]]
+* [Merged by Bors] -  Don't run init container as root and avoid chmod and chowning https://github.com/stackabletech/opa-operator/pull/382[[382]]
+
+
+== Repository nifi-operator:
+    
+Issues included in this release:
+
+* [Merged by Bors] - Removed tools image https://github.com/stackabletech/nifi-operator/pull/397[[397]]
+* Implement product image selection https://github.com/stackabletech/nifi-operator/issues/393[[393]]
+
+
+== Repository spark-k8s-operator:
+    
+Issues included in this release:
+
+* Implement product image selection https://github.com/stackabletech/spark-k8s-operator/issues/185[[185]]
+* Implement ADR 22 (Spark history server) https://github.com/stackabletech/spark-k8s-operator/issues/124[[124]]
+
+
+== Repository superset-operator:
+    
+Issues included in this release:
+
+* Implement product image selection https://github.com/stackabletech/superset-operator/issues/303[[303]]
+
+
+== Repository trino-operator:
+    
+Issues included in this release:
+
+* LDAP Secret resolution not working correctly https://github.com/stackabletech/trino-operator/issues/366[[366]]
+* [Merged by Bors] - fix/ldap-secret-key-name https://github.com/stackabletech/trino-operator/pull/362[[362]]
+* Implement product image selection https://github.com/stackabletech/trino-operator/issues/355[[355]]
+* [Merged by Bors] - Add support for Black Hole connector https://github.com/stackabletech/trino-operator/pull/347[[347]]
+* Trino fails to start if Hive-metastore replica is more than 1 https://github.com/stackabletech/trino-operator/issues/343[[343]]
+* Support for Google Sheets connector https://github.com/stackabletech/trino-operator/issues/339[[339]]
+
+
+== Repository zookeeper-operator:
+    
+Issues included in this release:
+
+* [Merged by Bors] - Consolidate global cluster config https://github.com/stackabletech/zookeeper-operator/pull/612[[612]]
+* [Merged by Bors] - Don't run init container as root and avoid chmod and chowning https://github.com/stackabletech/zookeeper-operator/pull/603[[603]]
+* init container should not fail with extra directories in data dir https://github.com/stackabletech/zookeeper-operator/issues/602[[602]]
+* [Merged by Bors] - Implement product image selection https://github.com/stackabletech/zookeeper-operator/pull/599[[599]]
+* Rework: ZooKeeper (split encryption and authentication according to the decision) https://github.com/stackabletech/zookeeper-operator/issues/596[[596]]
+* [Merged by Bors] - Logging https://github.com/stackabletech/zookeeper-operator/pull/588[[588]]
+* Document operator system requirements https://github.com/stackabletech/zookeeper-operator/issues/559[[559]]
+* Document myidOffset https://github.com/stackabletech/zookeeper-operator/issues/557[[557]]
+
+
+
+Generated at: 2023-02-07 18:21:41

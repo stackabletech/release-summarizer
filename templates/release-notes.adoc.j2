@@ -1,0 +1,21 @@
+////
+See [1] for attributes available in `issue` objects.
+
+[1] https://docs.github.com/en/rest/issues/issues?apiVersion=2022-11-28#list-repository-issues
+////
+
+= Release notes for label {{ summary.label }}
+
+{% for repo_summary in summary.repo %}
+== Repository {{ repo_summary.repo }}:
+    
+Issues included in this release:
+
+{% for issue in repo_summary.issues %}
+* {{ issue.title }} {{ issue.html_url }}[[{{ issue.number }}]]
+{% endfor %}
+
+
+{% endfor %}
+
+Generated at: {{ now("%Y-%m-%d %H:%M:%S") }}
