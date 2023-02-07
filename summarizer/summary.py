@@ -6,6 +6,7 @@ from typing import List
 from fastcore.basics import AttrDict
 from jinja2 import Environment, FileSystemLoader
 from datetime import datetime
+from importlib import resources
 
 
 def _noop_debug(req: Request) -> None:
@@ -48,10 +49,13 @@ def _jinja_now(format: str) -> str:
 
 
 def render(summary: Summary, template: str) -> str:
-    env = Environment(
-        loader=FileSystemLoader("./templates"),
-        trim_blocks=True
-    )
-    env.globals['now'] = _jinja_now
-    t = env.get_template(template)
-    return t.render({"summary": summary})
+    with resources.path(__package__, template) as template_path:
+        template_dir = template_path.parent.joinpath("templates")
+        print(template_dir)
+        env = Environment(
+            loader=FileSystemLoader(template_dir),
+            trim_blocks=True
+        )
+        env.globals['now'] = _jinja_now
+        t = env.get_template(template)
+        return t.render({"summary": summary})

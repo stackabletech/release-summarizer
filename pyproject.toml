@@ -1,0 +1,36 @@
+[project]
+name = "release_summarizer_stackabletech"
+version = "0.0.1"
+authors = [
+  { name="Razvan Mihai", email="razvan.mihai@stackable.tech" },
+]
+description = "Release notes generator from GitHub issues."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Open Software License 3.0 (OSL-3.0)",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "attrs==22.2.0",
+    "fastcore==1.5.28",
+    "ghapi==1.0.3",
+    "Jinja2==3.1.2"
+]
+
+[project.scripts]
+summarize = "summarizer:main"
+
+[project.urls]
+"Homepage" = "https://github.com/stackabletech/release-summarizer"
+"Bug Tracker" = "https://github.com/stackabletech/release-summarize/issues"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build]
+artifacts = [
+  "summarizer/templates/*.j2",
+]

@@ -17,6 +17,7 @@ REPOS = [
     "superset-operator",
     "trino-operator",
     "zookeeper-operator",
+    "issues",
 ]
 
 
