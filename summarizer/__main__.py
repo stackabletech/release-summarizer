@@ -6,7 +6,7 @@ from sys import exit
 def main():
     args = parse_args()
     sum = summary(args)
-    print(render(sum, "release-notes.adoc.j2"))
+    print(render(sum, args.template))
     exit(0)
 
 

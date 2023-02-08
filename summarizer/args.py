@@ -75,8 +75,14 @@ def parse_args() -> Namespace:
     parser.add_argument(
         "-s",
         "--gh-state",
-        help="Filter issues by GitHub state. Default: closed",
+        help="Filter issues by GitHub state. Default: closed.",
         default='closed'
+    )
+    parser.add_argument(
+        "-j",
+        "--template",
+        help="Template name.",
+        default='release-notes.adoc.j2'
     )
 
     return parser.parse_args()

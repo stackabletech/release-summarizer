@@ -51,7 +51,6 @@ def _jinja_now(format: str) -> str:
 def render(summary: Summary, template: str) -> str:
     with resources.path(__package__, template) as template_path:
         template_dir = template_path.parent.joinpath("templates")
-        print(template_dir)
         env = Environment(
             loader=FileSystemLoader(template_dir),
             trim_blocks=True
