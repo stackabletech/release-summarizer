@@ -1,3 +1,4 @@
+"""Command line argument handling for the summarizer."""
 from argparse import Namespace, ArgumentParser, Action
 import os
 
@@ -22,20 +23,25 @@ REPOS = [
 
 
 class EnvDefault(Action):
+    """Argparse helper action that reads a parameter from environment
+    if not provided on the command line.
+    """
+
     def __init__(self, envvar, required=True, default=None, **kwargs):
         if not default and envvar:
             if envvar in os.environ:
                 default = os.environ[envvar]
         if required and default:
             required = False
-        super(EnvDefault, self).__init__(default=default, required=required,
-                                         **kwargs)
+        super().__init__(default=default, required=required,
+                         **kwargs)
 
     def __call__(self, parser, namespace, values, option_string=None):
         setattr(namespace, self.dest, values)
 
 
 def parse_args() -> Namespace:
+    """Parse summarizer command line arguments."""
     parser = ArgumentParser(
         description="Summarize release information."
     )
@@ -51,7 +57,9 @@ def parse_args() -> Namespace:
         default="stackabletech",
     )
     parser.add_argument(
-        "-t", "--gh-token", help="GitHub token. Reads GITHUB_TOKEN env var by default.", action=EnvDefault, envvar='GITHUB_TOKEN')
+        "-t", "--gh-token",
+        help="GitHub token. Reads GITHUB_TOKEN env var by default.",
+        action=EnvDefault, envvar='GITHUB_TOKEN')
     parser.add_argument(
         "-r",
         "--gh-repo",

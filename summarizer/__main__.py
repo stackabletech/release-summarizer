@@ -1,13 +1,20 @@
+"""Main entry when running the summarizer as a package.
+
+Example:
+
+    GITHUB_TOKEN=xxx python -m summarizer --gh-repo issues --gh-label release/2023-01
+"""
+import sys
 from .args import parse_args
 from .summary import summary, render
-from sys import exit
 
 
 def main():
+    """Run the summarizer."""
     args = parse_args()
-    sum = summary(args)
-    print(render(sum, args.template))
-    exit(0)
+    notes = summary(args)
+    print(render(notes, args.template))
+    sys.exit(0)
 
 
 main()
