@@ -6,7 +6,7 @@ This package helps with the assembly of release notes for the Stackable Data Pla
 
 It's recommended to create and activate a virtual environment before installing the package with:
 
-    pip install .
+    pip install git+https://github.com/stackabletech/release-summarizer
 # Usage
 
 NOTE: a GitHub token with read access to the repositories is required. This must be available in the environment variable called `GITHUB_TOKEN` or passed explicitely with the `--gh-token` command line parameter.

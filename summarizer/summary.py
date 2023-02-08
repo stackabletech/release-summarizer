@@ -5,9 +5,9 @@ from datetime import datetime
 from importlib import resources
 from typing import List
 from urllib.request import Request
-from ghapi.all import GhApi, paged, print_summary
+from ghapi.all import GhApi, paged, print_summary  # type: ignore
 from attrs import define
-from fastcore.basics import AttrDict
+from fastcore.basics import AttrDict  # type: ignore
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -43,7 +43,7 @@ def summary(args: Namespace) -> Summary:
         for page in pages:
             issues.extend(list(page))
 
-        result.append(RepoSummary(repo=repo, issues=issues))
+        result.append(RepoSummary(repo, issues))
 
     return Summary(label=','.join(args.gh_label), repo=result)
 

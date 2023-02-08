@@ -1,7 +1,7 @@
 """Command line argument handling for the summarizer."""
 from argparse import Namespace, ArgumentParser, Action
 import os
-
+from .version import __version__
 
 REPOS = [
     "operator-rs",
@@ -92,5 +92,11 @@ def parse_args() -> Namespace:
         help="Template name.",
         default='release-notes.adoc.j2'
     )
+    parser.add_argument(
+        "-v",
+        "--version",
+        help="Display application version.",
+        action='version',
+        version=__version__)
 
     return parser.parse_args()
