@@ -2,13 +2,13 @@
 
 from argparse import Namespace
 from datetime import datetime
-from importlib import resources
 from typing import List
 from urllib.request import Request
-from ghapi.all import GhApi, paged, print_summary  # type: ignore
+
 from attrs import define
 from fastcore.basics import AttrDict  # type: ignore
-from jinja2 import Environment, FileSystemLoader
+from ghapi.all import GhApi, paged, print_summary  # type: ignore
+from jinja2 import Environment, PackageLoader
 
 
 def _noop_debug(req: Request) -> None:  # pylint: disable=unused-argument
@@ -55,12 +55,10 @@ def _jinja_now(fmt: str) -> str:
 
 def render(notes: Summary, template: str) -> str:
     """Render release notes with the given template."""
-    with resources.path(__package__, template) as template_path:
-        template_dir = template_path.parent.joinpath("templates")
-        env = Environment(
-            loader=FileSystemLoader(template_dir),
-            trim_blocks=True
-        )
-        env.globals['now'] = _jinja_now
-        tmpl = env.get_template(template)
-        return tmpl.render({"summary": notes})
+    env = Environment(
+        loader=PackageLoader(__package__, "templates"),
+        trim_blocks=True
+    )
+    env.globals['now'] = _jinja_now
+    tmpl = env.get_template(template)
+    return tmpl.render({"summary": notes})
